@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateMotocicletasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('motocicletas', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+                    $table->id('idMotocicleta');
+                    $table->string('marcaMotocicleta', 15);
+                    $table->string('modeloMotocicleta', 45);
+                    $table->binary('imagenMotocicleta');
+                    $table->timestamps();
         });
     }
 
