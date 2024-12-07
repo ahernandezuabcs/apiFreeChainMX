@@ -12,7 +12,7 @@ class CreateMotociclistasTable extends Migration
     public function up(): void
     {
         Schema::create('motociclistas', function (Blueprint $table) {
-            $table->string('idMotociclistas', 10)->primary();
+            $table->unsignedBigInteger('idMotociclistas')->primary(); // Define explícitamente como unsignedBigInteger
             $table->string('nombreMotociclista', 45);
             $table->string('primerApellidoMotociclista', 45);
             $table->string('segundoApellidoMotociclista', 45);
@@ -23,6 +23,9 @@ class CreateMotociclistasTable extends Migration
             $table->foreignId('puntosDeInteresIdPuntoInteres')->constrained('puntos_interes', 'idPuntoInteres');
             $table->timestamps();
         });
+        
+        
+        
     }
 
     /**

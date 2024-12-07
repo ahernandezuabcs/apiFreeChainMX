@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Motocicleta extends Model
+class PuntoInteres extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'idPuntoInteres';
     protected $fillable = [
-        'marcaMotocicleta',
-        'modeloMotocicleta',
-        'imagenMotocicleta'
+        'ubicacionPuntoInteres',
+        'imagenPuntoInteres'
     ];
 }
