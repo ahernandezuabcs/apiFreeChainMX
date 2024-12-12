@@ -12,20 +12,19 @@ class CreateMotociclistasTable extends Migration
     public function up(): void
     {
         Schema::create('motociclistas', function (Blueprint $table) {
-            $table->unsignedBigInteger('idMotociclistas')->primary(); // Define explícitamente como unsignedBigInteger
+            $table->increments('idMotociclistas')->primary(); // Define explícitamente como unsignedBigInteger
             $table->string('nombreMotociclista', 45);
             $table->string('primerApellidoMotociclista', 45);
-            $table->string('segundoApellidoMotociclista', 45);
+            $table->string('segundoApellidoMotociclista', 45)->nullable();
             $table->date('fechaNacimientoMotociclista');
-            $table->string('direccionMotociclista', 45);
-            $table->string('colonia', 45);
-            $table->foreignId('motocicletasIdMotocicleta')->constrained('motocicletas', 'idMotocicleta');
-            $table->foreignId('puntosDeInteresIdPuntoInteres')->constrained('puntos_interes', 'idPuntoInteres');
+            $table->string('direccionMotociclista', 45)->nullable();
+            $table->string('colonia', 45)->nullable();
+            $table->unsignedBigInteger('motocicletasIdMotocicleta')->nullable(); // Hacer nullable
+            $table->unsignedBigInteger('puntosDeInteresIdPuntoInteres')->nullable(); // Hacer nullable
+            $table->foreign('motocicletasIdMotocicleta')->references('idMotocicleta')->on('motocicletas');
+            $table->foreign('puntosDeInteresIdPuntoInteres')->references('idPuntoInteres')->on('puntos_interes');
             $table->timestamps();
         });
-        
-        
-        
     }
 
     /**

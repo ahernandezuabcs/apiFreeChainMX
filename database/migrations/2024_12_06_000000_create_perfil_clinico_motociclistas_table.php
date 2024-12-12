@@ -16,12 +16,12 @@ class CreatePerfilClinicoMotociclistasTable extends Migration
             $table->string('medicamentosHabituales', 255);
             $table->string('contactoEmergencia', 45);
             $table->string('telefonoEmergencia', 15);
-            $table->unsignedBigInteger('motociclistasIdMotociclistas'); // Clave foránea
-            $table->foreign('motociclistasIdMotociclistas', 'fk_motociclistas_perfil')
-                  ->references('idMotociclistas')
-                  ->on('motociclistas')
-                  ->onDelete('cascade')
-                  ->onUpdate('cascade');
+            $table->unsignedInteger('motociclistasIdMotociclistas'); // Asegúrate de que sea unsignedInteger
+        $table->foreign('motociclistasIdMotociclistas', 'fk_motociclistas_perfil')
+              ->references('idMotociclistas')
+              ->on('motociclistas')
+              ->onDelete('cascade')
+              ->onUpdate('cascade');
             $table->timestamps();
         });
         

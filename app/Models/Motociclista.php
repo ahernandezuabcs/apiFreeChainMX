@@ -10,8 +10,8 @@ class Motociclista extends Model
     use HasFactory;
 
     protected $primaryKey = 'idMotociclistas';
+    public $incrementing = true;
     protected $fillable = [
-        'idMotociclistas',
         'nombreMotociclista',
         'primerApellidoMotociclista',
         'segundoApellidoMotociclista',
