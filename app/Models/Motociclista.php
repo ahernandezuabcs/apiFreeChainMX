@@ -22,6 +22,10 @@ class Motociclista extends Model
         'puntosDeInteresIdPuntoInteres'
     ];
 
+    public function perfilClinico()
+    {
+        return $this->hasOne(PerfilClinicoMotociclista::class, 'motociclistasIdMotociclistas');
+    }
     public function motocicleta()
     {
         return $this->belongsTo(Motocicleta::class, 'motocicletasIdMotocicleta');
