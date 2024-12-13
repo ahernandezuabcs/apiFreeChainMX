@@ -12,7 +12,7 @@ class CreateMotociclistasTable extends Migration
     public function up(): void
     {
         Schema::create('motociclistas', function (Blueprint $table) {
-            $table->increments('idMotociclistas')->primary(); // Define explícitamente como unsignedBigInteger
+            $table->increments('idMotociclistas'); // Define explícitamente como unsignedBigInteger
             $table->string('nombreMotociclista', 45);
             $table->string('primerApellidoMotociclista', 45);
             $table->string('segundoApellidoMotociclista', 45)->nullable();
@@ -20,9 +20,7 @@ class CreateMotociclistasTable extends Migration
             $table->string('direccionMotociclista', 45)->nullable();
             $table->string('colonia', 45)->nullable();
             $table->unsignedBigInteger('motocicletasIdMotocicleta')->nullable(); // Hacer nullable
-            $table->unsignedBigInteger('puntosDeInteresIdPuntoInteres')->nullable(); // Hacer nullable
-            $table->foreign('motocicletasIdMotocicleta')->references('idMotocicleta')->on('motocicletas');
-            $table->foreign('puntosDeInteresIdPuntoInteres')->references('idPuntoInteres')->on('puntos_interes');
+            // Eliminar la clave foránea de puntosDeInteresIdPuntoInteres
             $table->timestamps();
         });
     }

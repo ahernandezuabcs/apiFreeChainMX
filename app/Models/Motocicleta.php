@@ -9,9 +9,20 @@ class Motocicleta extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'idMotocicleta';
+    public $incrementing = true;
     protected $fillable = [
         'marcaMotocicleta',
         'modeloMotocicleta',
-        'imagenMotocicleta'
+        'imagenMotocicleta',
+        'anio',
+        'cilindrada',
+        'placas',
+        'motociclistasIdMotociclistas'
     ];
+
+    public function motociclista()
+    {
+        return $this->belongsTo(Motociclista::class, 'motociclistasIdMotociclistas');
+    }
 }

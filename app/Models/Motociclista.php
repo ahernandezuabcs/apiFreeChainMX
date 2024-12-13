@@ -30,9 +30,4 @@ class Motociclista extends Model
     {
         return $this->belongsTo(Motocicleta::class, 'motocicletasIdMotocicleta');
     }
-
-    public function puntoInteres()
-    {
-        return $this->belongsTo(PuntoInteres::class, 'puntosDeInteresIdPuntoInteres');
-    }
 }
