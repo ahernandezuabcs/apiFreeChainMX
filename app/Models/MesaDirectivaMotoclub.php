@@ -9,8 +9,11 @@ class MesaDirectivaMotoclub extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'nombrePresidente';
+    protected $table = 'mesa_directiva_motoclub';
+    protected $primaryKey = 'id';
+    public $incrementing = true;
     protected $fillable = [
+        'nombrePresidente',
         'idPresidente',
         'nombreVicePresidente',
         'idVicePresidente',

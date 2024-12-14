@@ -9,16 +9,17 @@ class Evento extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'idEvento';
+    protected $primaryKey = 'id';
+    public $incrementing = true;
     protected $fillable = [
-        'sedeEvento',
-        'organizadorEvento',
-        'ubicacionEvento',
-        'organizacionIdOrganizacion'
+        'nombreEvento',
+        'fechaEvento',
+        'descripcionEvento',
+        'organizacionId'
     ];
 
     public function organizacion()
     {
-        return $this->belongsTo(Organizacion::class, 'organizacionIdOrganizacion');
+        return $this->belongsTo(Organizacion::class, 'organizacionId');
     }
 }

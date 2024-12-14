@@ -18,8 +18,6 @@ class Motociclista extends Model
         'fechaNacimientoMotociclista',
         'direccionMotociclista',
         'colonia',
-        'motocicletasIdMotocicleta',
-        'puntosDeInteresIdPuntoInteres'
     ];
 
     public function perfilClinico()

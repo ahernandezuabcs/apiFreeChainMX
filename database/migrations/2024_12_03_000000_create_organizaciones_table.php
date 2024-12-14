@@ -9,14 +9,14 @@ class CreateOrganizacionesTable extends Migration
     public function up()
     {
         Schema::create('organizaciones', function (Blueprint $table) {
-            $table->id('idOrganizacion');
+            $table->id();
             $table->string('nombreOrganizacion', 45);
             $table->string('tipoOrganizacion', 45);
-            $table->binary('logoOrganizacion');
+            $table->binary('logoOrganizacion')->nullable();
             $table->string('sedeOrganizacion', 45);
             $table->boolean('mesaDirectiva');
-            $table->string('mesaDirectivaMotoclubIdPresidente', 45);
-            $table->foreign('mesaDirectivaMotoclubIdPresidente')->references('nombrePresidente')->on('mesa_directiva_motoclub');
+            $table->unsignedBigInteger('mesaDirectivaMotoclubId');
+            $table->foreign('mesaDirectivaMotoclubId')->references('id')->on('mesa_directiva_motoclub')->onDelete('cascade');
             $table->timestamps();
         });
     }

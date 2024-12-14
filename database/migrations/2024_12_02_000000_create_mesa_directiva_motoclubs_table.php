@@ -9,7 +9,8 @@ class CreateMesaDirectivaMotoclubsTable extends Migration
     public function up()
     {
         Schema::create('mesa_directiva_motoclub', function (Blueprint $table) {
-            $table->string('nombrePresidente', 45)->primary();
+            $table->id();
+            $table->string('nombrePresidente', 45);
             $table->string('idPresidente', 10);
             $table->string('nombreVicePresidente', 45);
             $table->string('idVicePresidente', 10);

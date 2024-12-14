@@ -9,11 +9,12 @@ class CreateEventosTable extends Migration
     public function up()
     {
         Schema::create('eventos', function (Blueprint $table) {
-            $table->id('idEvento');
-            $table->string('sedeEvento', 45);
-            $table->string('organizadorEvento', 45);
-            $table->string('ubicacionEvento', 45);
-            $table->foreignId('organizacionIdOrganizacion')->constrained('organizaciones', 'idOrganizacion');
+            $table->id();
+            $table->string('nombreEvento', 255);
+            $table->date('fechaEvento');
+            $table->text('descripcionEvento');
+            $table->unsignedBigInteger('organizacionId');
+            $table->foreign('organizacionId')->references('id')->on('organizaciones')->onDelete('cascade');
             $table->timestamps();
         });
     }

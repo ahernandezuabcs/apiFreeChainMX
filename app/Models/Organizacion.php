@@ -9,18 +9,19 @@ class Organizacion extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'idOrganizacion';
+    protected $primaryKey = 'id';
+    public $incrementing = true;
     protected $fillable = [
         'nombreOrganizacion',
         'tipoOrganizacion',
         'logoOrganizacion',
         'sedeOrganizacion',
         'mesaDirectiva',
-        'mesaDirectivaMotoclubIdPresidente'
+        'mesaDirectivaMotoclubId'
     ];
 
     public function mesaDirectivaMotoclub()
     {
-        return $this->belongsTo(MesaDirectivaMotoclub::class, 'mesaDirectivaMotoclubIdPresidente');
+        return $this->belongsTo(MesaDirectivaMotoclub::class, 'mesaDirectivaMotoclubId');
     }
 }
