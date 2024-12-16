@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,7 +8,10 @@ class PuntoInteres extends Model
 {
     use HasFactory;
 
+    protected $table = 'puntos_interes'; 
+
     protected $primaryKey = 'idPuntoInteres';
+
     protected $fillable = [
         'ubicacionPuntoInteres',
         'imagenPuntoInteres'

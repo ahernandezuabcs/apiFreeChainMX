@@ -23,10 +23,19 @@ class PuntoInteresController extends Controller
             $debugMessages[] = "Validating request";
             $validatedData = $request->validate([
                 'ubicacionPuntoInteres' => 'required|string|max:45',
-                'imagenPuntoInteres' => 'required|binary',
+                'imagenPuntoInteres' => 'nullable|file|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
 
             $debugMessages[] = "Validation passed";
+
+            // Manejar la carga del archivo
+            if ($request->hasFile('imagenPuntoInteres')) {
+                $file = $request->file('imagenPuntoInteres');
+                $path = $file->store('public/puntos_interes');
+                $validatedData['imagenPuntoInteres'] = $path;
+            } else {
+                $validatedData['imagenPuntoInteres'] = null;
+            }
 
             $puntoInteres = PuntoInteres::create($validatedData);
             $debugMessages[] = "PuntoInteres created";
@@ -69,10 +78,19 @@ class PuntoInteresController extends Controller
             $debugMessages[] = "Validating request";
             $validatedData = $request->validate([
                 'ubicacionPuntoInteres' => 'sometimes|required|string|max:45',
-                'imagenPuntoInteres' => 'sometimes|required|binary',
+                'imagenPuntoInteres' => 'nullable|file|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
 
             $debugMessages[] = "Validation passed";
+
+            // Manejar la carga del archivo
+            if ($request->hasFile('imagenPuntoInteres')) {
+                $file = $request->file('imagenPuntoInteres');
+                $path = $file->store('public/puntos_interes');
+                $validatedData['imagenPuntoInteres'] = $path;
+            } else {
+                $validatedData['imagenPuntoInteres'] = null;
+            }
 
             $puntoInteres = PuntoInteres::findOrFail($id);
             $puntoInteres->update($validatedData);
