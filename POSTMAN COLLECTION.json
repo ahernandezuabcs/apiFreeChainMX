@@ -1,0 +1,1242 @@
+{
+	"info": {
+		"_postman_id": "f9bad34b-da56-437a-a34b-d2c36a678503",
+		"name": "FreeChainMxAPI Rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24494894"
+	},
+	"item": [
+		{
+			"name": "BIKERS",
+			"item": [
+				{
+					"name": "Get All Bikers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/motociclistas",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"motociclistas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add A Biker",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombreMotociclista",
+									"value": "Roberto",
+									"type": "text"
+								},
+								{
+									"key": "primerApellidoMotociclista",
+									"value": "Solorzano",
+									"type": "text"
+								},
+								{
+									"key": "segundoApellidoMotociclista",
+									"value": "Garcia",
+									"type": "text"
+								},
+								{
+									"key": "fechaNacimientoMotociclista",
+									"value": "1996-12-30",
+									"type": "text"
+								},
+								{
+									"key": "direccionMotociclista",
+									"value": "Santa fe",
+									"type": "text"
+								},
+								{
+									"key": "colonia",
+									"value": "Santa Fe",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/motociclistas",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"motociclistas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get A Biker",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/motociclistas/{id}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"motociclistas",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit A Biker",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombreMotociclista\": \"Juan\",\n    \"primerApellidoMotociclista\": \"Pérez\",\n    \"segundoApellidoMotociclista\": \"García\",\n    \"fechaNacimientoMotociclista\": \"1990-01-01\",\n    \"direccionMotociclista\": \"Calle Falsa 123\",\n    \"colonia\": \"Centro\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/motociclistas/{id}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"motociclistas",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": " Delete A Biker",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/motociclistas/{id}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"motociclistas",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CLINIC PROFILE",
+			"item": [
+				{
+					"name": "Add Clinic Profile ",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tipoSangre",
+									"value": "A+",
+									"type": "text"
+								},
+								{
+									"key": "enfermedadesCronicas",
+									"value": "N/A",
+									"type": "text"
+								},
+								{
+									"key": "alergias",
+									"value": "N/A",
+									"type": "text"
+								},
+								{
+									"key": "medicamentosHabituales",
+									"value": "N/A",
+									"type": "text"
+								},
+								{
+									"key": "contactoEmergencia",
+									"value": "Martin Hernandez",
+									"type": "text"
+								},
+								{
+									"key": "telefonoEmergencia",
+									"value": "6121479730",
+									"type": "text"
+								},
+								{
+									"key": "motociclistasIdMotociclistas",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/perfil_clinico_motociclistas",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"perfil_clinico_motociclistas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Clinic Profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/perfil_clinico_motociclistas",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"perfil_clinico_motociclistas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get A Clinic Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/perfil_clinico_motociclistas/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"perfil_clinico_motociclistas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit A Clinic Profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tipoSangre\": \"O+\",\n    \"enfermedadesCronicas\": \"Diabetes\",\n    \"alergias\": \"Polen\",\n    \"medicamentosHabituales\": \"Insulina\",\n    \"contactoEmergencia\": \"Maria Perez\",\n    \"telefonoEmergencia\": \"1234567890\",\n    \"motociclistasIdMotociclistas\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/perfil_clinico_motociclistas/{1}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"perfil_clinico_motociclistas",
+								"{1}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete A Clinic Profile",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/perfil_clinico_motociclistas/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"perfil_clinico_motociclistas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BIKES",
+			"item": [
+				{
+					"name": "Add A Bike",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "marcaMotocicleta",
+									"value": "Vento",
+									"type": "text"
+								},
+								{
+									"key": "modeloMotocicleta",
+									"value": "Rocketman Racing",
+									"type": "text"
+								},
+								{
+									"key": "anio",
+									"value": "2022",
+									"type": "text"
+								},
+								{
+									"key": "cilindrada",
+									"value": "250",
+									"type": "text"
+								},
+								{
+									"key": "placas",
+									"value": "01fv4",
+									"type": "text"
+								},
+								{
+									"key": "motociclistasIdMotociclistas",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/motocicletas",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"motocicletas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bikes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/motocicletas",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"motocicletas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get A Bike",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/motocicletas/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"motocicletas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit A Bike",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"marcaMotocicleta\": \"Honda\",\n    \"modeloMotocicleta\": \"CBR500R\",\n    \"anio\": 2021,\n    \"cilindrada\": 471,\n    \"placas\": \"XYZ789\",\n    \"motociclistasIdMotociclistas\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/motocicletas/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"motocicletas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete A Bike",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/motocicletas/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"motocicletas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CLUB LEADERSHIP",
+			"item": [
+				{
+					"name": "Add Club Leadership",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombrePresidente\": \"Jack\",\n    \"idPresidente\": \"P001\",\n    \"nombreVicePresidente\": \"Spike\",\n    \"idVicePresidente\": \"VP001\",\n    \"nombreSecretario\": \"Jlo\",\n    \"idSecretario\": \"S001\",\n    \"nombreSgtoArms\": \"Eder\",\n    \"idSgtoArms\": \"SA001\",\n    \"nombreCapitanRuta\": \"Joe\",\n    \"idCapitanRuta\": \"CR001\",\n    \"nombreRelacionesPublicas\": \"Chef\",\n    \"idRelacionesPublicas\": \"RP001\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/mesa_directiva",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"mesa_directiva"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Clubs Leaderships",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/mesa_directiva",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"mesa_directiva"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get A Club Leadership",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/mesa_directiva/{id}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"mesa_directiva",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit A Club Leadership",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombrePresidente\": \"Russell\",\n    \"idPresidente\": \"P001\",\n    \"nombreVicePresidente\": \"Joe\",\n    \"idVicePresidente\": \"VP001\",\n    \"nombreSecretario\": \"Jlo\",\n    \"idSecretario\": \"S001\",\n    \"nombreSgtoArms\": \"Jack\",\n    \"idSgtoArms\": \"SA001\",\n    \"nombreCapitanRuta\": \"Joe\",\n    \"idCapitanRuta\": \"CR001\",\n    \"nombreRelacionesPublicas\": \"Chef\",\n    \"idRelacionesPublicas\": \"RP001\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/mesa_directiva/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"mesa_directiva",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete A Club Leadership",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombrePresidente\": \"Russell\",\n    \"idPresidente\": \"P001\",\n    \"nombreVicePresidente\": \"Joe\",\n    \"idVicePresidente\": \"VP001\",\n    \"nombreSecretario\": \"Jlo\",\n    \"idSecretario\": \"S001\",\n    \"nombreSgtoArms\": \"Jack\",\n    \"idSgtoArms\": \"SA001\",\n    \"nombreCapitanRuta\": \"Joe\",\n    \"idCapitanRuta\": \"CR001\",\n    \"nombreRelacionesPublicas\": \"Chef\",\n    \"idRelacionesPublicas\": \"RP001\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/mesa_directiva/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"mesa_directiva",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EVENTS",
+			"item": [
+				{
+					"name": "Add Events",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombreEvento\": \"Concierto de Rock\",\n    \"fechaEvento\": \"2024-12-25\",\n    \"descripcionEvento\": \"Un gran concierto de rock.\",\n    \"organizacionId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/eventos",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"eventos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/eventos",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"eventos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get An Event",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/eventos/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"eventos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit An Event",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombreEvento\": \"Rodada Nocturna\",\n    \"fechaEvento\": \"2024-12-25\",\n    \"descripcionEvento\": \"Un gran concierto de rock.\",\n    \"organizacionId\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/eventos/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"eventos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete An Event",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/eventos/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"eventos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ORGANIZATIONS",
+			"item": [
+				{
+					"name": "Add An Organization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombreOrganizacion\": \"Motoclub XYZ\",\n    \"tipoOrganizacion\": \"Motoclub\",\n    \"sedeOrganizacion\": \"Ciudad ABC\",\n    \"mesaDirectiva\": true,\n    \"mesaDirectivaMotoclubId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/organizaciones",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"organizaciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Organizations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/organizaciones",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"organizaciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get A Organization",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/organizaciones/{id}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"organizaciones",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit An Organizations",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombreOrganizacion\": \"Sector 1\",\n    \"tipoOrganizacion\": \"Motoclub\",\n    \"sedeOrganizacion\": \"San Jose Del Cabo\",\n    \"mesaDirectiva\": true,\n    \"mesaDirectivaMotoclubId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/organizaciones/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"organizaciones",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete An Organizations",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/organizaciones/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"organizaciones",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LOCAL COMMERCE",
+			"item": [
+				{
+					"name": "Add A Local Commerce",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"localidadComercio\": \"Centro\",\n    \"tipoComercio\": \"Restaurante\",\n    \"ubicacionComercio\": \"Calle Falsa 123\",\n    \"imagenComercio\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comercios-locales",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comercios-locales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Local Commerces",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comercios-locales",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comercios-locales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get A  Local Commerce",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comercios-locales/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comercios-locales",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit A Local Commerce",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"localidadComercio\": \"Roma\",\n    \"tipoComercio\": \"Taller\",\n    \"ubicacionComercio\": \"Calle Falsa 123\",\n    \"imagenComercio\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comercios-locales/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comercios-locales",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete A Local Commerce",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comercios-locales/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comercios-locales",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SPOTS OF INTEREST",
+			"item": [
+				{
+					"name": "Add An Spot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ubicacionPuntoInteres\": \"Parque Central\",\n    \"imagenPuntoInteres\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/puntos-interes",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"puntos-interes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Spots ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/puntos-interes",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"puntos-interes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get An Spot",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/puntos-interes/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"puntos-interes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit An Spot",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ubicacionPuntoInteres\": \"La Garita de Chilpa\",\n    \"imagenPuntoInteres\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/puntos-interes/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"puntos-interes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete An Spot",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/puntos-interes/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"puntos-interes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
