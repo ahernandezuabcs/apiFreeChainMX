@@ -5,6 +5,11 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateComercioLocalesTable extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
         Schema::create('comercio_locales', function (Blueprint $table) {
@@ -12,11 +17,16 @@ class CreateComercioLocalesTable extends Migration
             $table->string('localidadComercio', 15);
             $table->string('tipoComercio', 45);
             $table->string('ubicacionComercio', 45);
-            $table->binary('imagenComercio');
+            $table->string('imagenComercio')->nullable();
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::dropIfExists('comercio_locales');

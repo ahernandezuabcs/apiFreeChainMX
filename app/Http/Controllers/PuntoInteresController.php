@@ -8,44 +8,117 @@ class PuntoInteresController extends Controller
 {
     public function index()
     {
-        return response()->json(PuntoInteres::all());
+        return response()->json([
+            'message' => 'Index method called',
+            'data' => PuntoInteres::all()
+        ]);
     }
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'ubicacionPuntoInteres' => 'required|string|max:45',
-            'imagenPuntoInteres' => 'required|binary',
-        ]);
+        $debugMessages = [];
+        $debugMessages[] = "Store method called";
 
-        $puntoInteres = PuntoInteres::create($validatedData);
+        try {
+            $debugMessages[] = "Validating request";
+            $validatedData = $request->validate([
+                'ubicacionPuntoInteres' => 'required|string|max:45',
+                'imagenPuntoInteres' => 'required|binary',
+            ]);
 
-        return response()->json($puntoInteres, 201);
+            $debugMessages[] = "Validation passed";
+
+            $puntoInteres = PuntoInteres::create($validatedData);
+            $debugMessages[] = "PuntoInteres created";
+            return response()->json([
+                'message' => 'PuntoInteres created successfully',
+                'data' => $puntoInteres,
+                'debug' => $debugMessages
+            ], 201);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            $debugMessages[] = "Validation error: " . json_encode($e->errors());
+            return response()->json([
+                'error' => 'Error de validación',
+                'message' => $e->errors(),
+                'debug' => $debugMessages
+            ], 400);
+        } catch (\Exception $e) {
+            $debugMessages[] = "Exception: " . $e->getMessage();
+            return response()->json([
+                'error' => 'Error al crear el punto de interés',
+                'message' => $e->getMessage(),
+                'debug' => $debugMessages
+            ], 500);
+        }
     }
 
     public function show($id)
     {
-        return response()->json(PuntoInteres::findOrFail($id));
+        return response()->json([
+            'message' => 'Show method called',
+            'data' => PuntoInteres::findOrFail($id)
+        ]);
     }
 
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'ubicacionPuntoInteres' => 'sometimes|required|string|max:45',
-            'imagenPuntoInteres' => 'sometimes|required|binary',
-        ]);
+        $debugMessages = [];
+        $debugMessages[] = "Update method called";
 
-        $puntoInteres = PuntoInteres::findOrFail($id);
-        $puntoInteres->update($validatedData);
+        try {
+            $debugMessages[] = "Validating request";
+            $validatedData = $request->validate([
+                'ubicacionPuntoInteres' => 'sometimes|required|string|max:45',
+                'imagenPuntoInteres' => 'sometimes|required|binary',
+            ]);
 
-        return response()->json($puntoInteres);
+            $debugMessages[] = "Validation passed";
+
+            $puntoInteres = PuntoInteres::findOrFail($id);
+            $puntoInteres->update($validatedData);
+            $debugMessages[] = "PuntoInteres updated";
+            return response()->json([
+                'message' => 'PuntoInteres updated successfully',
+                'data' => $puntoInteres,
+                'debug' => $debugMessages
+            ]);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            $debugMessages[] = "Validation error: " . json_encode($e->errors());
+            return response()->json([
+                'error' => 'Error de validación',
+                'message' => $e->errors(),
+                'debug' => $debugMessages
+            ], 400);
+        } catch (\Exception $e) {
+            $debugMessages[] = "Exception: " . $e->getMessage();
+            return response()->json([
+                'error' => 'Error al actualizar el punto de interés',
+                'message' => $e->getMessage(),
+                'debug' => $debugMessages
+            ], 500);
+        }
     }
 
     public function destroy($id)
     {
-        $puntoInteres = PuntoInteres::findOrFail($id);
-        $puntoInteres->delete();
+        $debugMessages = [];
+        $debugMessages[] = "Destroy method called";
 
-        return response()->json(null, 204);
+        try {
+            $puntoInteres = PuntoInteres::findOrFail($id);
+            $puntoInteres->delete();
+            $debugMessages[] = "PuntoInteres deleted";
+            return response()->json([
+                'message' => 'PuntoInteres deleted successfully',
+                'debug' => $debugMessages
+            ], 204);
+        } catch (\Exception $e) {
+            $debugMessages[] = "Exception: " . $e->getMessage();
+            return response()->json([
+                'error' => 'Error al eliminar el punto de interés',
+                'message' => $e->getMessage(),
+                'debug' => $debugMessages
+            ], 500);
+        }
     }
 }

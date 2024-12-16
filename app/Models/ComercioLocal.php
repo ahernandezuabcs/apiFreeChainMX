@@ -8,7 +8,10 @@ class ComercioLocal extends Model
 {
     use HasFactory;
 
+    protected $table = 'comercio_locales'; 
+
     protected $primaryKey = 'idComercioLocal';
+
     protected $fillable = [
         'localidadComercio',
         'tipoComercio',
