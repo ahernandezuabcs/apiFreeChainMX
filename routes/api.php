@@ -8,6 +8,8 @@ use App\Http\Controllers\MotocicletaController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\MesaDirectivaMotoclubController;
 use App\Http\Controllers\OrganizacionController;
+use App\Http\Controllers\ComercioLocalController;
+use App\Http\Controllers\PuntoInteresController;
 
 
 
@@ -24,3 +26,5 @@ Route::resource('motocicletas', MotocicletaController::class);
 Route::resource('eventos', EventoController::class);
 Route::resource('mesa_directiva', MesaDirectivaMotoclubController::class);
 Route::resource('organizaciones', OrganizacionController::class);
+Route::apiResource('comercios-locales', ComercioLocalController::class);
+Route::apiResource('puntos-interes', PuntoInteresController::class);
