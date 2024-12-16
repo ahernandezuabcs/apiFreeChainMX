@@ -39,11 +39,16 @@ class MesaDirectivaMotoclubController extends Controller
 
             $mesa = MesaDirectivaMotoclub::create($validatedData);
             return response()->json($mesa, 201);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            return response()->json([
+                'error' => 'Error de validación',
+                'message' => $e->errors()
+            ], 400);
         } catch (\Exception $e) {
             return response()->json([
                 'error' => 'Error al crear la mesa directiva',
                 'message' => $e->getMessage()
-            ], 400);
+            ], 500);
         }
     }
 
@@ -80,11 +85,16 @@ class MesaDirectivaMotoclubController extends Controller
             $mesa = MesaDirectivaMotoclub::findOrFail($id);
             $mesa->update($validatedData);
             return response()->json($mesa);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            return response()->json([
+                'error' => 'Error de validación',
+                'message' => $e->errors()
+            ], 400);
         } catch (\Exception $e) {
             return response()->json([
                 'error' => 'Error al actualizar la mesa directiva',
                 'message' => $e->getMessage()
-            ], 400);
+            ], 500);
         }
     }
 
@@ -101,7 +111,7 @@ class MesaDirectivaMotoclubController extends Controller
             return response()->json([
                 'error' => 'Error al eliminar la mesa directiva',
                 'message' => $e->getMessage()
-            ], 400);
+            ], 500);
         }
     }
 }

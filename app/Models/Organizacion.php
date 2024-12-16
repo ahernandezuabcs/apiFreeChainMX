@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Organizacion extends Model
 {
     use HasFactory;
+    protected $table = 'organizaciones';
 
     protected $primaryKey = 'id';
     public $incrementing = true;
     protected $fillable = [
         'nombreOrganizacion',
         'tipoOrganizacion',
-        'logoOrganizacion',
         'sedeOrganizacion',
         'mesaDirectiva',
         'mesaDirectivaMotoclubId'

@@ -7,6 +7,7 @@ use App\Http\Controllers\PerfilClinicoMotociclistaController;
 use App\Http\Controllers\MotocicletaController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\MesaDirectivaMotoclubController;
+use App\Http\Controllers\OrganizacionController;
 
 
 
@@ -22,3 +23,4 @@ Route::resource('perfil_clinico_motociclistas', PerfilClinicoMotociclistaControl
 Route::resource('motocicletas', MotocicletaController::class);
 Route::resource('eventos', EventoController::class);
 Route::resource('mesa_directiva', MesaDirectivaMotoclubController::class);
+Route::resource('organizaciones', OrganizacionController::class);

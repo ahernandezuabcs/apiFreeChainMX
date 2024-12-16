@@ -8,7 +8,7 @@ class CreateMesaDirectivaMotoclubsTable extends Migration
 {
     public function up()
     {
-        Schema::create('mesa_directiva_motoclub', function (Blueprint $table) {
+        Schema::create('mesa_directiva_motoclubs', function (Blueprint $table) {
             $table->id();
             $table->string('nombrePresidente', 45);
             $table->string('idPresidente', 10);
@@ -28,6 +28,6 @@ class CreateMesaDirectivaMotoclubsTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('mesa_directiva_motoclub');
+        Schema::dropIfExists('mesa_directiva_motoclubs');
     }
 }

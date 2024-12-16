@@ -1,26 +1,35 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 class CreateOrganizacionesTable extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
         Schema::create('organizaciones', function (Blueprint $table) {
             $table->id();
-            $table->string('nombreOrganizacion', 45);
-            $table->string('tipoOrganizacion', 45);
-            $table->binary('logoOrganizacion')->nullable();
-            $table->string('sedeOrganizacion', 45);
+            $table->string('nombreOrganizacion');
+            $table->string('tipoOrganizacion');
+            $table->string('sedeOrganizacion');
             $table->boolean('mesaDirectiva');
             $table->unsignedBigInteger('mesaDirectivaMotoclubId');
-            $table->foreign('mesaDirectivaMotoclubId')->references('id')->on('mesa_directiva_motoclub')->onDelete('cascade');
             $table->timestamps();
+
+            $table->foreign('mesaDirectivaMotoclubId')->references('id')->on('mesa_directiva_motoclubs');
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::dropIfExists('organizaciones');
